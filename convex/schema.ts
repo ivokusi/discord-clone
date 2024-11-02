@@ -25,6 +25,8 @@ export default defineSchema({
     content: v.string(),
     directMessage: v.id("directMessages"),
     attachment: v.optional(v.id("_storage")),
+    deleted: v.optional(v.boolean()),
+    deletedReason: v.optional(v.string()),
   }).index("by_direct_message", ["directMessage"]),
   directMessages: defineTable({}),
   directMessagesMembers: defineTable({
